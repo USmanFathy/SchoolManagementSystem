@@ -11,6 +11,9 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    const STATUS_PAYMENT =['paid','not_paid'];
+    const GENDER =['male','female'];
+
     /**
      * The attributes that are mass assignable.
      *
