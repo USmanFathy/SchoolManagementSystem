@@ -15,6 +15,7 @@ abstract class StoringServices implements HandleStoringServicesInterface
     abstract protected function messageFailedAction():string;
     abstract protected function modelClass(): string;
     abstract protected function requestFile(): string;
+    abstract protected function relations(): array;
 
     public function create(): string
     {
