@@ -3,14 +3,17 @@
 namespace App\CustomCoreServices\StoringServices;
 
 
- use App\CustomCoreServices\Traits\FilesHandleTrait;
- use App\CustomCoreServices\Traits\RelationsHandleTrait;
+ use Illuminate\Support\Facades\DB;
 
  abstract class SingleRecordStoringService extends StoringServices
 {
 
 
-     public function handle(): void
-     {
-     }
+    protected function getTable():string{
+        return resolve($this->modelClass())->getTable();
+    }
+
+    public function handle(): void{
+        DB::table($this->getTable())->create($this->data);
+    }
  }
