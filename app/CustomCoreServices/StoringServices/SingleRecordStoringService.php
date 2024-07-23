@@ -13,7 +13,7 @@ namespace App\CustomCoreServices\StoringServices;
         return resolve($this->modelClass())->getTable();
     }
 
-    public function handle(): void{
-        DB::table($this->getTable())->create($this->data);
+    public function handle(array $data): void{
+        DB::table($this->getTable())->create($data);
     }
  }

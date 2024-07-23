@@ -4,5 +4,5 @@ namespace App\CustomCoreServices\Interfaces;
 
 interface HandleStoringServicesInterface
 {
-    public function handle():void;
+    public function handle(array $data):void;
 }

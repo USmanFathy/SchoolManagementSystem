@@ -19,16 +19,13 @@ abstract class StoringServices implements HandleStoringServicesInterface
     abstract protected function requestFile(): string;
     abstract protected function relations(): array;
 
-    public function __construct(){
-        $this->data = $this->valdiate(request());
-    }
-
 
     public function create(): string
     {
         try {
+            $this->data = $this->valdiate(request());
             DB::beginTransaction();
-            $this->handle();
+            $this->handle($this->data);
             $this->handleRelations();
             $this->handleFiles();
             DB::commit();
