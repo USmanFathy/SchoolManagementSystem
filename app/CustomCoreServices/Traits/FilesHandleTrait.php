@@ -4,7 +4,7 @@ namespace App\CustomCoreServices\Traits;
 
 trait FilesHandleTrait
 {
-    public function handleFiles():void{
+    protected function handleFiles():void{
 
     }
 }
